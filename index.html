@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backlog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen">
+  <!-- Main Module -->
+  <header class="bg-transparent h-20 flex items-center">
+    <div class="container mx-auto px-4 flex items-center">
+      <div class="flex items-center">
+        <span class="text-gray-500 text-3xl mr-1" style="font-family: 'Roboto Mono', monospace;">un</span>
+        <h1 class="text-3xl font-bold text-white header-title" style="font-family: 'Roboto Mono', monospace;">Backlog</h1>
+      </div>
+    </div>
+  </header>
+    <div class="container mx-auto px-4 py-6">
+    <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <h2 class="text-xl font-semibold text-gray-700 mb-3" style="font-family: 'Roboto Mono', monospace;">Acerca de</h2>
+      <p class="text-gray-600" style="font-family: 'Roboto Mono', monospace;">
+        UNBacklog es una aplicación diseñada para simplificar la vida académica de los estudiantes de la Universidad Nacional de Colombia. 
+        Funcionando como un motor de búsqueda especializado, UnBacklog centraliza y organiza la información sobre los diversos trámites 
+        estudiantiles disponibles en la UNAL. Su objetivo principal es ayudarte a encontrar de manera rápida y eficiente el trámite 
+        específico que necesitas, eliminando la frustración de navegar por múltiples portales, documentos y dependencias.
+        </p>
+        <p class="text-gray-600" style="font-family: 'Roboto Mono', monospace;">
+        Con UnBacklog, puedes acceder fácilmente a descripciones claras de cada proceso, los enlaces directos a las páginas oficiales donde se 
+        gestionan y, cuando aplica, las fechas límite para su realización. Es tu aliado digital para mantenerte al día con los procedimientos 
+        administrativos de la universidad, permitiéndote enfocarte más en tus estudios y menos en la burocracia.
+      </p>
+    </section>
+
+  <section id="hero-search" class="container mx-auto px-4 text-center mt-8">
+    <h2 class="text-xl font-medium mb-6" style="font-family: 'Roboto Mono', monospace;">Todos los Trámites en un solo lugar</h2>
+    <div class="relative max-w-3xl mx-auto">
+      <input id = "busqueda" type="text" placeholder="Busca algún Tramite..." class="search-bar w-full bg-white text-gray-800 pr-12">
+      <button id = "boton-buscar" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-700">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-4">
+    <main class="white-card bg-white mt-10">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6" style="font-family: 'Roboto Mono', monospace;">
+        <i class="fas fa-thumbtack mr-2" ></i> Trámites Guardados
+      </h2>
+      
+      <div id="articles-list" class="space-y-4">
+        <!-- Loading State -->
+        <div id="loading-state" class="hidden py-10 text-center">
+          <i class="fas fa-spinner fa-spin text-blue-600 text-2xl mb-2"></i>
+          <p class="text-gray-500">Loading trámites...</p>
+        </div>
+        
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden py-10 text-center">
+          <i class="fas fa-search text-gray-400 text-2xl mb-2"></i>
+          <p class="text-gray-500">No trámites found matching your criteria</p>
+        </div>
+        
+        <!-- tramites Cards -->
+        <div id="tramites"></div>
+      </div>
+    </main>
+  </div>
+    <script src="js/connect.js"></script>
+</body>
+</html>
